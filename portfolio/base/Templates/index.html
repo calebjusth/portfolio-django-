@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.0-beta.3/iconify-icon.min.js"></script>
+    <title>Caleb</title>
+</head>
+<body>
+    <header>
+    <a href="/" class="logo">Ca<span>leb </span></a>
+    <div class="bx bx-menu" id="menu-icon"></div>
+    
+    <ul class="navlist">
+         <li><a href="/">Home  </a></li>
+         <li><a href="/#mywork">My Works</a></li>
+          <li><a href="{% url 'service' %}">Service</a></li>
+            <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+
+    
+    </ul>
+    
+    
+    <div class="h-btn">
+        <a href="{% url 'contact' %}" class="sign-in">Contact</a>
+      </div>
+    </header>
+    {% csrf_token %}
+    {% block content %}
+   
+
+    {% endblock content %}
+
+
+<div class="copyright">
+    <p>© 2022 All rights reserved | Built and develop by Caleb Wesley </p>
+</div>
+<script src="{% static 'js/index.js'  %}"></script>    
+</body>
+</html>

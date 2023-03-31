@@ -1,0 +1,70 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<section>
+<div class="hero">
+    <div class="heading">
+        <h6>Testimonials</h6> 
+        <h2>What Happy Clients are Saying</h2>
+     </div>
+
+     <div class="conatiner">
+        <div class="indicator">
+            <span class="btns active"></span>
+            <span class="btns"></span>
+            <span class="btns"></span>
+            <span class="btns"></span>
+        </div>
+        <div class="testimonial">
+        <div class="slide-row" id="slide">
+            {% for tes in test %}
+            <div class="slide-col">
+                <div class="user-text">
+                    <p>{{tes.testimoney}}</p>
+                    <h3>{{tes.name}}</h3>
+                    <p>{{tes.campany_name}}</p>
+                </div>
+                <div class="user-img">
+                    <img src="{{tes.image.url}}" alt="">
+                </div>
+            </div>
+            {% endfor %}
+    
+         </div>
+        </div>
+     </div>
+
+
+
+</div>
+</section>
+<!-----more testimonies---->
+
+<section id="tes">
+    <div id="header">
+        More Testimonies
+    </div>
+    {% for testimonies in mt %}
+
+    <div class="feedback">
+        <div id="client">
+            <button>
+                <img src="{{testimonies.image.url}}" />
+            </button>
+        </div>
+        <div class="content">
+            <div id="author">{{testimonies.name}}</div>
+            <div id="job">{{testimonies.position_of_client}}<br>{{testimonies.company_name}}</div>
+            <div id="message">
+                {{testimonies.testimoney}}
+            </div>
+            
+        </div>
+        
+    </div>
+    {% endfor %}
+    
+</section>
+
+
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+<style type="text/css">
+	header .sign-in{
+		display: none;
+	}	
+</style>
+
+<section class="home2" id="home2">
+	<center>
+        <div class="home-text">
+          <h1>Chat me<span> Up</span></h1>
+          
+          
+          
+
+          <h2 style="margin-bottom: -30px;">I am available on</h2>
+          <br><br><br>
+         <div class="icon">
+         <a href="https://www.facebook.com/caleb.wesley.758"><iconify-icon icon="akar-icons:facebook-fill"></iconify-icon></a>
+         <a href="https://t.me/calev1"><iconify-icon icon="akar-icons:telegram-fill"></iconify-icon></a>
+         <a href="mailto:calebwesley98@gmail.com"><iconify-icon icon="akar-icons:google-fill"></iconify-icon></a>
+ 
+         
+      </div>
+        </div>
+        <div>
+
+        </div>
+    </center>
+        
+</section>
+
+<section class="contact">
+	<div class="contact-form">
+		<h1>Contact <span>Me</span></h1>
+		<p>Call me at +251703228398</p>
+		<form>
+			<input type="text" placeholder="Your Name" name="" required>
+			<input type="email" placeholder="E-mail" name="" required>
+			<input type="text" placeholder="Write a Subject" name="" required>
+			<textarea name="" id="" cols="30" rows="10" placeholder="Your message" required>
+				
+			</textarea>
+
+			<input type="submit" name="" value="Submit" class="btn">
+		</form>
+	</div>
+
+	<div class="contact-img">
+		<img src="{% static 'images/cala.jpg' %}">
+		
+	</div>
+</section>
+
+
+{% endblock content %}

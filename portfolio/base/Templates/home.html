@@ -1,0 +1,96 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="home" id="home">
+        <div class="home-text">
+          <h1>I'm Caleb<br> <span>Python Developer</span></h1>
+          
+          <a href="#about" id="btn" class="btn">Read More</a><br><br><br>
+          
+
+          <h2 style="margin-bottom: -30px;">Proficient in the following</h2>
+           <ul class="count">
+            
+             <li><span>Web Development</span> <br>Django, Html, Css, Js, React</li>
+             <li><span>App Development</span> <br>Python Kivy, Flutter</li>
+             <li><span>Cyber Security</span> <br>Python scripting, Parrot Linux</li>
+          </ul>
+        </div>
+        <div>
+
+        </div>
+
+      </section>
+
+        <section class="mywork" id="mywork">
+          <div class="heading">
+            <h6 style="font-size:50px ;">My portfolio</h6>
+            <p>Take a look at some of my work<br>Hover over the images to see details</p>
+         </div>
+      
+         <div class="portfolio-content">
+      
+      
+          {% for port in portfolio %}
+          <div class="col">
+            
+           <img src="{{port.image.url}}">
+           <div class="layer">
+             <h3>{{port.Title}}<br><br>{{port.detail}}<br>{% if port.link == "" %}{% else %}<a href="{{port.link}}" style="font-family:Monotype Corsiva; font-weight: 1000; color: bisque;">Visit Site</a>{% endif %}</h3>
+             
+           </div>
+        </div>
+        
+           {% endfor %}
+        
+         
+        </div>
+      
+        </section>      
+
+
+
+        <section class="about" id="about">
+          <div class="about-img">
+             <img src="{% static 'images/lt.jpg' %}">
+          </div>
+          <div class="about-text">
+               <h2>About Me</h2>
+               <h5>My Short<span> Story</span></h5>
+               <p>I'm a Python Fullstack developer, through out my years in the software development industry, I have built Dynamic websites and apps for great brands from various parts of the world and have worked along affable teams for big projects. Although I corely use python, my skills are not limited to it, I'm familier with php, Flutter and Javascript. <br>I desire to see a world where technology aids humanity live better, and even though my role in this great process is pretty much small I am glad I can contribute my small efforts by helping people's business advance and make tangable exploits. 
+              <br><br><a href="/contact/" class="btn">Contact Me</a>
+          </div>
+        </section>
+
+
+
+
+
+
+
+<section class="services" id="services">
+    <div class="heading">
+       <h6 style="font-size:50px ;">Brands</h6>
+       <p>Happy Clients with great brands <br> whom I've worked with</p>
+    </div>
+    <div class="services-contents">
+        {% for fk in imgs %}
+        <div class="box">
+        <img src="{{ fk.image.url }}" alt="brand"  width="300">  
+        </div>
+            {% endfor %}
+       
+
+    </div>
+    </section>
+
+
+  
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content %}
+
+<section class="portfolio" id="portfolio">
+
+<div class="heading">
+   <h6>Creative Solutions</h6>
+   <h2>Software Solutions</h2>
+   <p>Advanced Technologies for the best experience <br> Quality is a Priority</p>
+</div>
+<div class="portfolio-content">
+
+
+  {% for srv in serv %}
+  <div class="col">
+  	
+   <img src="{{srv.image.url}}">
+   <div class="layer">
+     <h3>{{srv.text}}<br><br>{{srv.details}}</h3>
+     
+   </div>
+</div>
+
+   {% endfor %}
+
+ 
+</div>
+
+<br><br>
+<center>
+ <a href="/contact/" id="btn" class="btn">Contact Me</a>
+</center>
+
+
+</section>
+
+
+
+
+{% endblock content %}
